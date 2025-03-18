@@ -1,0 +1,1 @@
+//Ta bort detta och byt ut med API som vi valt att använda, tex OpenWeatherAPI
