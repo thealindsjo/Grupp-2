@@ -206,3 +206,74 @@ body {
   #popular-button{
     color: red;
   }
+
+  /* Lägg till detta CSS till din styles.css fil */
+
+#aboutUs main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#aboutUs section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#aboutUs section h1,
+#aboutUs section h2,
+#aboutUs section h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#aboutUs section p {
+  line-height: 1.6;
+  color: #555;
+}
+
+#aboutUs .container {
+  width: 90%; /* Gör behållaren lite smalare */
+  max-width: 1000px; /* Begränsa maximal bredd */
+  margin: 0 auto;
+}
+
+#aboutUs section:last-child .container > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Gör teammedlemmarna responsiva */
+}
+
+#aboutUs section:last-child .container > div > div {
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1 1 200px; /* Gör teammedlemmarna flexibla */
+}
+
+#aboutUs section:last-child .container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+#aboutUs section:last-child .container h5 {
+  margin-bottom: 5px;
+}
+
+#aboutUs section:last-child .container .text-muted {
+  color: #777;
+}
+
+/* Anpassa för mindre skärmar */
+@media (max-width: 768px) {
+  #aboutUs main {
+      padding: 10px;
+  }
+  #aboutUs .container {
+      width: 95%;
+  }
