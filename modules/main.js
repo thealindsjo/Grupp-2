@@ -1,11 +1,11 @@
 import { API_TOKEN } from './api_token.js';
 
-// const toggleMenu = document.querySelector(".toggleMenu");
-// const menu = document.querySelector(".menu");
+const toggleMenu = document.querySelector(".toggleMenu");
+const menu = document.querySelector(".menu");
 
-// toggleMenu.addEventListener("click", () => {
-//     menu.classList.toggle("active");
-// });
+toggleMenu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
 
 if (document.body.id === 'movies') {
     console.log('found movies');
