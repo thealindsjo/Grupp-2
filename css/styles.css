@@ -103,12 +103,31 @@ body {
   }
   
   
-  .column {
+  #column1 {
     -ms-flex: 25%; 
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
   }
+  #column2 {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  #column3 {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  #column4 {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+
   
   .column img {
     margin-top: 8px;
@@ -180,7 +199,22 @@ body {
 
   
   @media screen and (max-width: 800px) {
-    .column {
+    #column1 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column2 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column3 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column4 {
       -ms-flex: 50%;
       flex: 50%;
       max-width: 50%;
@@ -188,7 +222,22 @@ body {
   }
   
   @media screen and (max-width: 600px) {
-    .column {
+    #column1 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column2 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column3 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column4 {
       -ms-flex: 100%;
       flex: 100%;
       max-width: 100%;
