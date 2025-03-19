@@ -138,14 +138,13 @@ body {
   .nav_ {
     position: relative;
     display: flex;
-    justify-content: flex-end; /* Placera toggle-knappen till höger */
+    justify-content: flex-end;
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Stil för toggle-knappen */
 .toggleMenu {
     font-size: 30px;
     cursor: pointer;
@@ -159,10 +158,9 @@ body {
     position: absolute;
     top: 10px;
     right: 20px;
-    z-index: 1000; /* Se till att den alltid är ovanför andra element */
+    z-index: 1000; 
 }
 
-/* Standardmenyn (dold vid start) */
 .menu {
     display: none;
     flex-direction: column;
@@ -176,12 +174,10 @@ body {
     padding: 10px;
 }
 
-/* Visa menyn när den är aktiv */
 .menu.active {
     display: flex;
 }
 
-/* Styla länkar i menyn */
 .menu div {
     padding: 10px;
 }
@@ -256,8 +252,6 @@ body {
     color: red;
   }
 
-  /* Lägg till detta CSS till din styles.css fil */
-
 #aboutUs main {
   max-width: 1200px;
   margin: 0 auto;
@@ -285,21 +279,21 @@ body {
 }
 
 #aboutUs .container {
-  width: 90%; /* Gör behållaren lite smalare */
-  max-width: 1000px; /* Begränsa maximal bredd */
+  width: 90%; 
+  max-width: 1000px; 
   margin: 0 auto;
 }
 
 #aboutUs section:last-child .container > div {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Gör teammedlemmarna responsiva */
+  flex-wrap: wrap; 
 }
 
 #aboutUs section:last-child .container > div > div {
   text-align: center;
   margin-bottom: 20px;
-  flex: 1 1 200px; /* Gör teammedlemmarna flexibla */
+  flex: 1 1 200px;
 }
 
 #aboutUs section:last-child .container img {
@@ -318,7 +312,6 @@ body {
   color: #777;
 }
 
-/* Anpassa för mindre skärmar */
 @media (max-width: 768px) {
   #aboutUs main {
       padding: 10px;
