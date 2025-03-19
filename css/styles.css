@@ -327,3 +327,19 @@ body {
       width: 95%;
   }
 }
+
+#tvSeries button{
+  border-radius: 5px;
+  border: 1px solid rgb(80, 80, 80);
+  box-shadow: 10px 8px 5px rgba(81, 81, 81, 0.698);
+}
+
+#tvSeries .top-section button, form button, form input {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+#tvSeries form input {
+  padding: 0.5rem;
+  width: 200px;
+}
