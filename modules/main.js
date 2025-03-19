@@ -18,36 +18,23 @@ if (document.body.id === 'movies') {
         const topRatedBtn = document.querySelector('#top-rated-button');
         const searchField = document.querySelector('#search-field');
 
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${API_TOKEN}`
+            }
+        };
+
         popularBtn.addEventListener('click', async () => {
-            const options = {
-                method: 'GET',
-                headers: {
-                    accept: 'application/json',
-                    Authorization: `Bearer ${API_TOKEN}`
-                }
-            };
             const popularMovies = await fetchPopularMovies(options);
         });
 
         topRatedBtn.addEventListener('click', async () => {
-            const options = {
-                method: 'GET',
-                headers: {
-                    accept: 'application/json',
-                    Authorization: `Bearer ${API_TOKEN}`
-                }
-            };
             const topRatedMovies = await fetchTopRatedMovies(options);
         });
 
         // searchField.addEventListener('submit', async (event) => {
-        //     const options = {
-        //         method: 'GET',
-        //         headers: {
-        //             accept: 'application/json',
-        //             Authorization: `Bearer ${API_TOKEN}`
-        //         }
-        //     };
 
         //     const searchInput = event.target.value.trim();
         //     const searchResults = await fetchSearchMovies(options, searchInput);
