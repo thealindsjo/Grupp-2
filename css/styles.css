@@ -39,5 +39,6 @@
       display: flex;
       justify-content: space-between;
       max-width: 98%;
-      margin-top: 10%;
+      margin: auto;
+
   }
