@@ -1,5 +1,8 @@
 function toggleMenu() {
     console.log("Toggle menu clicked");
     const menu = document.querySelector('.menu');
-    menu.classList.toggle('active');
+    
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
     }
