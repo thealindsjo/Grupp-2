@@ -16,7 +16,7 @@ export function displayTvSeries(tvSeries, contentContainer) {
         title.textContent = tvShow.name;
 
         const rating = document.createElement('p');
-        rating.textContent = tvShow.vote_average;
+        rating.textContent = tvShow.vote_average.toFixed(1);
 
         tvShowElement.append(img, title, rating);
 
@@ -42,7 +42,7 @@ export function displayMovies(movies, contentContainer) {
         title.textContent = movie.title;
 
         const rating = document.createElement('p');
-        rating.textContent = movie.vote_average;
+        rating.textContent = movie.vote_average.toFixed(1);
 
         movieElement.append(img, title, rating);
         
