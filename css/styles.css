@@ -167,6 +167,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   padding: 1%;
+  max-width: 10%;
 }
 
 #myImg:hover {
