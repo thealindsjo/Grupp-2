@@ -1,4 +1,4 @@
-import { fetchPopularMovies, fetchTopRatedMovies } from './api-calls-movies.js';
+import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from './api-calls-movies.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
     const popularButton = document.getElementById("popular-button");
