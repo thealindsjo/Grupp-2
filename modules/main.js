@@ -7,7 +7,7 @@ toggleMenu.addEventListener("click", () => {
 
 if (document.body.id === 'movies') {
     import('./movies.js')
-        .catch(error => console.error("Error loading movies module:", error));
+        .catch(error => console.error("Error loading Movies module:", error));
 }
 
 if (document.body.id === 'tvSeries') {
