@@ -37,6 +37,9 @@ padding-bottom: 5%;
     padding-top: 10%;
     padding-bottom: 10%;
 }
+#home-buttons a{
+ text-decoration: none;
+}
 #home-content{
     display: flex;
     max-width: 100%;
