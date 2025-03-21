@@ -2,6 +2,7 @@
 @import url("footer.css");
 @import url("modal.css");
 @import url("home.css");
+@import url("search.css");
 
 /* ========== Grundläggande reset och layout ========== */
 * {
@@ -19,6 +20,7 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
 }
 
 #contentContainer {
@@ -41,7 +43,7 @@ section {
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
@@ -97,13 +99,13 @@ section {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 50px;
-  right: 20px;
+  top: 85px;
+  right: 30px; 
   background-color: white;
-  width: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
+  z-index: 1000;
 }
 
 .menu.active {
