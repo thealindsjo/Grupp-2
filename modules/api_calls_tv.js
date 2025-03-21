@@ -1,4 +1,14 @@
-export async function fetchTopRatedTvSeries(options) {
+import { API_TOKEN } from './api_token.js';
+
+const options = {
+    method: 'GET',
+    headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_TOKEN}`
+    }
+};
+
+export async function fetchTopRatedTvSeries() {
     try {
         const response = await fetch('https://api.themoviedb.org/3/tv/popular?language=en-US&page=1', options);
 
@@ -19,7 +29,7 @@ export async function fetchTopRatedTvSeries(options) {
     } 
 }
 
-export async function fetchPopularTvSeries(options) {
+export async function fetchPopularTvSeries() {
     try {
         const response = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options);
 
@@ -40,7 +50,7 @@ export async function fetchPopularTvSeries(options) {
     } 
 }
 
-export async function fetchSearchTvSeries(options, searchInput) {
+export async function fetchSearchTvSeries(searchInput) {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(searchInput)}&include_adult=true&language=en-US&page=1`, options);
         
