@@ -1,3 +1,4 @@
+import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from "./api_calls_movies.js";
 export function displayTvSeries(tvSeries) {
     const container = document.querySelector("#tv-shows");
     container.innerHTML = ""; // Rensa innehållet innan ny visning
@@ -14,7 +15,6 @@ export function displayTvSeries(tvSeries) {
 }
 
 export function displayMovies(movies) {
-import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from './api-calls-movies.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
     const popularButton = document.getElementById("popular-button");
@@ -31,4 +31,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
         container.appendChild(movieElement);
     });
-}
+    popularButton.addEventListener("click", async () => {
+        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
+        const movies = await fetchPopularMovies(options);
+        displayMovies(movies);
+    });
+    
+    // Hämta och visa topprankade filmer
+    topRatedButton.addEventListener("click", async () => {
+        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
+        const movies = await fetchTopRatedMovies(options);
+        displayMovies(movies);
+    });
+})};
+
