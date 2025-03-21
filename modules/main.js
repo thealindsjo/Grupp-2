@@ -17,7 +17,7 @@ if (document.body.id === 'movies') {
         const popularBtn = document.querySelector('#popular-button');
         const topRatedBtn = document.querySelector('#top-rated-button');
         const searchField = document.querySelector('#search-field');
-        const searchInput = document.querySelector('#search-input');
+       
 
         const options = {
             method: 'GET',
