@@ -16,44 +16,45 @@
 </head>
 
 <body id="tvSeries">
-  <header>
-    <nav>
-      <div class="nav_">
-        <div class="toggleMenu">
-          <i class="fas fa-bars"></i>
+  <main>
+    <header>
+      <nav>
+        <div class="nav_">
+          <div class="toggleMenu">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="menu">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="movies.html">Movies</a></div>
+            <div><a href="tvSeries.html">TV Series</a></div>
+            <div><a href="aboutUs.html">About Us</a></div>
+          </div>
         </div>
-        <div class="menu">
-          <div><a href="index.html">Home</a></div>
-          <div><a href="movies.html">Movies</a></div>
-          <div><a href="tvSeries.html">TV Series</a></div>
-          <div><a href="aboutUs.html">About Us</a></div>
+      </nav>
+    </header>
+
+    <section class="top-section">
+      <h1>TV Series</h1>
+      <input type="text" id="search-field" placeholder="Search for a TV Series...">
+      <button id="top-rated-btn">Top-Rated TV Series</button>
+      <button id="popular-btn">Popular TV Series</button>
+    </section>
+
+    <div class="container">
+      <container class="flex-gallery">
+
+        <div id="contentContainer">
         </div>
-      </div>
-    </nav>
-  </header>
 
-  <section class="top-section">
-    <h1>TV Series</h1>
-    <input type="text" id="search-input" placeholder="Search for a TV Series...">
-    <button id="top-rated-btn">Top-Rated TV Series</button>
-    <button id="popular-btn">Popular TV Series</button>
-  </section>
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
 
-  <main class="container">
-    <container class="flex-gallery">
-
-      <div class="contentContainer">
-      </div>
-
-      <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-      </div>
-
-    </container>
+      </container>
+    </div>
   </main>
-
   <footer>
     <div class="footer-container">
       <p>&copy; 2025 Grupp 2 - All Rights Reserved</p>

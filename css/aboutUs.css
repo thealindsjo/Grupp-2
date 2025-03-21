@@ -1,39 +1,44 @@
-#aboutUs main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  #aboutUs .container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  #aboutUs section {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  #aboutUs section:last-child .container > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #aboutUs section:last-child .container > div > div {
-    text-align: center;
-    flex: 1 1 200px;
-    margin-bottom: 20px;
-  }
-  
-  #aboutUs section:last-child .container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
+#aboutUs .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.team-container .team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-container .team-member {
+  text-align: center;
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+.team-container .team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.mission-vision-values {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mission-vision-values > div {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+#aboutUs section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}

@@ -1,6 +1,5 @@
 import { API_TOKEN } from './api_token.js';
-import { displayMovies,displayTvSeries } from './display.js';
-import { initModal } from './modal.js';
+import { displayMovies, displayTvSeries } from './display.js';
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
@@ -9,17 +8,15 @@ toggleMenu.addEventListener("click", () => {
     menu.classList.toggle("active");
 });
 
-const containerDiv = document.querySelector('.container');
-
 if (document.body.id === 'movies') {
     import("./api_calls_movies.js").then(module => {
         const { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } = module;
 
+        const contentContainer = document.querySelector('#contentContainer');
         const popularBtn = document.querySelector('#popular-btn');
         const topRatedBtn = document.querySelector('#top-rated-btn');
         const searchField = document.querySelector('#search-field');
        
-
         const options = {
             method: 'GET',
             headers: {
@@ -30,25 +27,28 @@ if (document.body.id === 'movies') {
 
         popularBtn.addEventListener('click', async () => {
             const popularMovies = await fetchPopularMovies(options);
-            displayMovies(popularMovies);
-            initModal();
+            displayMovies(popularMovies, contentContainer);
         });
 
         topRatedBtn.addEventListener('click', async () => {
             const topRatedMovies = await fetchTopRatedMovies(options);
-            displayMovies(topRatedMovies);
-            initModal();
+            displayMovies(topRatedMovies, contentContainer);
         });
 
-        
+        const delay = 300;
+        let timer;
 
-        // searchField.addEventListener('submit', async (event) => {
+        searchField.addEventListener('input', async (event) => {
+            const searchInput = event.target.value.trim();
+            
+            clearTimeout(timer);
+            timer = setTimeout(async () => {
+                
+            const searchedMovies = await fetchSearchMovies(options, searchInput)
+            displayMovies(searchedMovies, contentContainer);
+            }, delay);
+        })
 
-        //     const searchInput = event.target.value.trim();
-        //     const searchResults = await fetchSearchMovies(options, searchInput);
-
-
-        // });
     })
     .catch(error => console.error("Error loading module:", error));
 
@@ -56,10 +56,12 @@ if (document.body.id === 'movies') {
 
 if (document.body.id === 'tvSeries') {
     import("./api_calls_tv.js").then(module => {
-        const { fetchPopularTvSeries, fetchTopRatedTvSeries } = module;
+        const { fetchPopularTvSeries, fetchTopRatedTvSeries, fetchSearchTvSeries } = module;
 
+        const contentContainer = document.querySelector('#contentContainer');
         const popularBtn = document.querySelector('#popular-btn');
         const topRatedBtn = document.querySelector('#top-rated-btn');
+        const searchField = document.querySelector('#search-field');
 
         const options = {
             method: 'GET',
@@ -71,13 +73,28 @@ if (document.body.id === 'tvSeries') {
 
         popularBtn.addEventListener('click', async () => {
             const popularSeries = await fetchPopularTvSeries(options);
-            displayTvSeries(popularSeries);
+            displayTvSeries(popularSeries, contentContainer);
         });
 
         topRatedBtn.addEventListener('click', async () => {
             const topRatedSeries = await fetchTopRatedTvSeries(options);
-            displayTvSeries(topRatedSeries);
+            displayTvSeries(topRatedSeries, contentContainer);
         });
+
+      
+        const delay = 300;
+        let timer;
+
+        searchField.addEventListener('input', async (event) => {
+            const searchInput = event.target.value.trim();
+            
+            clearTimeout(timer);
+            timer = setTimeout(async () => {
+                
+            const searchedSeries = await fetchSearchTvSeries(options, searchInput)
+            displayMovies(searchedSeries, contentContainer);
+            }, delay);
+        })
 
     }).catch(error => console.error("Error loading TV module:", error));
 }
