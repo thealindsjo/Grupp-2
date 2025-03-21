@@ -14,6 +14,11 @@ export function displayTvSeries(tvSeries) {
 }
 
 export function displayMovies(movies) {
+import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from './api-calls-movies.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const popularButton = document.getElementById("popular-button");
+    const topRatedButton = document.getElementById("top-rated-button");
     const container = document.querySelector(".container");
     container.innerHTML = ""; // Rensa innehållet innan ny visning
     movies.forEach(movie => {
