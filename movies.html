@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="./modules/main.js" type="module" defer></script>
+    <script src="./modules/display.js" type="module" defer></script>
+    <script src="./modules/modal.js" type="module" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -49,17 +51,16 @@
 
             <div class="row">
               
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
               
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+                <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
                 
-               
                 <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
                 <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
                 <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
@@ -71,8 +72,6 @@
                 <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
          
         </div>
-
-
 
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
@@ -99,35 +98,6 @@
         </div>
       </footer>
     
-    <script>
-        // create references to the modal...
-        var modal = document.getElementById('myModal');
-        // to all images -- note I'm using a class!
-        var images = document.getElementsByClassName('myImages');
-        // the image in the modal
-        var modalImg = document.getElementById("img01");
-        // and the caption in the modal
-        var captionText = document.getElementById("caption");
-
-        // Go through all of the images with our custom class
-        for (var i = 0; i < images.length; i++) {
-            var img = images[i];
-            // and attach our click listener for this image.
-            img.onclick = function (evt) {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-        }
-
-        var span = document.getElementsByClassName("close")[0];
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    </script>
-    
-
 </body>
 
 </html>
