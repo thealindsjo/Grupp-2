@@ -1,5 +1,5 @@
 import { API_TOKEN } from './api_token.js';
- import { displayMovies } from './display.js';
+ import { displayMovies,displayTvSeries } from './display.js';
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
