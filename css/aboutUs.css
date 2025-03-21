@@ -42,3 +42,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
+
+@media screen and (min-width: 600px) {
+  .vision-item{
+    margin: 0 30px;
+  }
+}
