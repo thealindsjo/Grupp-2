@@ -1,6 +1,5 @@
 import { API_TOKEN } from './api_token.js';
-import { displayMovies,displayTvSeries } from './display.js';
-import { initModal } from './modal.js';
+import { displayMovies, displayTvSeries } from './display.js';
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
@@ -15,11 +14,11 @@ if (document.body.id === 'movies') {
     import("./api_calls_movies.js").then(module => {
         const { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } = module;
 
+        const contentContainer = document.querySelector('.contentContainer');
         const popularBtn = document.querySelector('#popular-btn');
         const topRatedBtn = document.querySelector('#top-rated-btn');
         const searchField = document.querySelector('#search-field');
        
-
         const options = {
             method: 'GET',
             headers: {
@@ -30,25 +29,14 @@ if (document.body.id === 'movies') {
 
         popularBtn.addEventListener('click', async () => {
             const popularMovies = await fetchPopularMovies(options);
-            displayMovies(popularMovies);
-            initModal();
+            displayMovies(popularMovies, contentContainer);
         });
 
         topRatedBtn.addEventListener('click', async () => {
             const topRatedMovies = await fetchTopRatedMovies(options);
-            displayMovies(topRatedMovies);
-            initModal();
+            displayMovies(topRatedMovies, contentContainer);
         });
 
-        
-
-        // searchField.addEventListener('submit', async (event) => {
-
-        //     const searchInput = event.target.value.trim();
-        //     const searchResults = await fetchSearchMovies(options, searchInput);
-
-
-        // });
     })
     .catch(error => console.error("Error loading module:", error));
 
