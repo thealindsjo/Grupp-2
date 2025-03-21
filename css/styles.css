@@ -1,90 +1,225 @@
-.row {
-    display: -ms-flexbox; 
-    display: flex;
-    -ms-flex-wrap: wrap; 
-    flex-wrap: wrap;
-    padding: 0 4px;
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
   }
-  
-  
-  .column {
-    -ms-flex: 25%; 
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
+  to {
+    transform: scale(1)
   }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
     width: 100%;
   }
+}
 
-  .nav_ {
-    position: relative;
-    display: flex;
-    justify-content: flex-end; /* Placera toggle-knappen till höger */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+#column1 {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+#column2 {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+#column3 {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+#column4 {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.nav_ {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  /* Placera toggle-knappen till höger */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Stil för toggle-knappen */
 .toggleMenu {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    background: none;
-    border: none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 1000; /* Se till att den alltid är ovanför andra element */
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  /* Se till att den alltid är ovanför andra element */
 }
 
 /* Standardmenyn (dold vid start) */
 .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background-color: white;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 10px;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: white;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 /* Visa menyn när den är aktiv */
 .menu.active {
-    display: flex;
+  display: flex;
 }
 
 /* Styla länkar i menyn */
 .menu div {
-    padding: 10px;
+  padding: 10px;
 }
 
 .menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  display: block;
 }
 
 .menu a:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
   
   @media screen and (max-width: 800px) {
-    .column {
+    #column1 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column2 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column3 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    #column4 {
       -ms-flex: 50%;
       flex: 50%;
       max-width: 50%;
@@ -92,7 +227,22 @@
   }
   
   @media screen and (max-width: 600px) {
-    .column {
+    #column1 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column2 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column3 {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    #column4 {
       -ms-flex: 100%;
       flex: 100%;
       max-width: 100%;
@@ -105,4 +255,80 @@
       margin: auto;
 
   }
+
   
+  #popular-button{
+    color: red;
+  }
+
+  /* Lägg till detta CSS till din styles.css fil */
+
+#aboutUs main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#aboutUs section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#aboutUs section h1,
+#aboutUs section h2,
+#aboutUs section h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#aboutUs section p {
+  line-height: 1.6;
+  color: #555;
+}
+
+#aboutUs .container {
+  width: 90%; /* Gör behållaren lite smalare */
+  max-width: 1000px; /* Begränsa maximal bredd */
+  margin: 0 auto;
+}
+
+#aboutUs section:last-child .container > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Gör teammedlemmarna responsiva */
+}
+
+#aboutUs section:last-child .container > div > div {
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1 1 200px; /* Gör teammedlemmarna flexibla */
+}
+
+#aboutUs section:last-child .container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+#aboutUs section:last-child .container h5 {
+  margin-bottom: 5px;
+}
+
+#aboutUs section:last-child .container .text-muted {
+  color: #777;
+}
+
+/* Anpassa för mindre skärmar */
+@media (max-width: 768px) {
+  #aboutUs main {
+      padding: 10px;
+  }
+  #aboutUs .container {
+      width: 95%;
+  }
+}
