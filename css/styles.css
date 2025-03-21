@@ -1,3 +1,7 @@
+@import url("aboutUs.css");
+@import url("footer.css");
+@import url("modal.css");
+
 /* ========== Grundläggande reset och layout ========== */
 * {
   box-sizing: border-box;
@@ -10,7 +14,7 @@ body {
   line-height: 1.6;
 }
 
-.row {
+.contentContainer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -18,96 +22,7 @@ body {
   padding: 0 4px;
   justify-content: flex-start;
 }
-
-
-
-/* ========== Responsiva kolumner där movies/series ska appendas till ========== */
-#column1 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column2 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column3 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column4 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
  
-@media screen and (max-width: 870px) {
-  #column1 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column2 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column3 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column4 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #column1 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column2 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column3 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column4 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
 .flex-gallery{
     display: flex;
     justify-content: space-between;
@@ -161,141 +76,17 @@ body {
   background-color: #f0f0f0;
 }
 
-/* ========== Bilder och modal ========== */
-#myImg {
+.myContent {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   padding: 1%;
   margin: 5%;
-  width: 400px;
-  max-width: 400px;
+  max-width: 200px;
 }
 
-#myImg:hover {
+.myContent:hover {
   opacity: 0.7;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: auto;
-  padding-top: 100px;
-}
-
-.modal-content {
-  display: block;
-  margin: auto;
-  width: 90%;
-  max-width: 700px;
-}
-
-#caption {
-  display: block;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-}
-
-@keyframes zoom {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
-}
-
-.modal-content, #caption {
-  animation: zoom 0.6s;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.close:hover {
-  color: #bbb;
-}
-
-/* ========== Team-sektion ========== */
-#aboutUs main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-#aboutUs .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-}
-
-#aboutUs section {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-#aboutUs section:last-child .container > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#aboutUs section:last-child .container > div > div {
-  text-align: center;
-  flex: 1 1 200px;
-  margin-bottom: 20px;
-}
-
-#aboutUs section:last-child .container img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-/* ========== Footer ========== */
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #f39c12;
 }
 
 /* ========== Galleri ========== */
@@ -305,27 +96,4 @@ footer {
   justify-content: center;
   max-width: 70%;
   margin: auto;
-}
-
-.column {
-  flex: 1 1 100%;
-  padding: 4px;
-}
-
-.column img {
-  width: 100%;
-  margin-top: 8px;
-}
-
-/* ========== Media Queries för större skärmar ========== */
-@media screen and (min-width: 600px) {
-  .column {
-    flex: 1 1 50%;
-  }
-}
-
-@media screen and (min-width: 870px) {
-  .column {
-    flex: 1 1 25%;
-  }
 }
