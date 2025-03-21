@@ -203,7 +203,7 @@ body {
 }
 
   
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 870px) {
     #column1 {
       -ms-flex: 50%;
       flex: 50%;
@@ -251,7 +251,7 @@ body {
   .flex-gallery{
       display: flex;
       justify-content: space-between;
-      max-width: 98%;
+      max-width: 73.5%;
       margin: auto;
 
   }
