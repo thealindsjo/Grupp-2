@@ -121,7 +121,7 @@ body {
 /* ========== Navigation ========== */
 .nav_ {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 10px 20px;
   background-color: #fff;
@@ -131,9 +131,6 @@ body {
 .toggleMenu {
   font-size: 30px;
   cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
 }
 
 .menu {
