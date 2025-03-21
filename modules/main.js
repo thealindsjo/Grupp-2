@@ -48,3 +48,31 @@ if (document.body.id === 'movies') {
     .catch(error => console.error("Error loading module:", error));
 
 };
+
+if (document.body.id === 'tvSeries') {
+    import("./api_calls_tv.js").then(module => {
+        const { fetchPopularTvSeries, fetchTopRatedTvSeries } = module;
+
+        const popularBtn = document.querySelector('#popular-btn');
+        const topRatedBtn = document.querySelector('#top-rated-btn');
+
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${API_TOKEN}`
+            }
+        };
+
+        popularBtn.addEventListener('click', async () => {
+            const popularSeries = await fetchPopularTvSeries(options);
+            displayTvSeries(popularSeries);
+        });
+
+        topRatedBtn.addEventListener('click', async () => {
+            const topRatedSeries = await fetchTopRatedTvSeries(options);
+            displayTvSeries(topRatedSeries);
+        });
+
+    }).catch(error => console.error("Error loading TV module:", error));
+}
