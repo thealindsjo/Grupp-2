@@ -15,7 +15,7 @@ body {
   line-height: 1.6;
 }
 
-.contentContainer {
+#contentContainer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -23,14 +23,20 @@ body {
   padding: 0 4px;
   justify-content: flex-start;
 }
- 
+
 .flex-gallery{
     display: flex;
     justify-content: space-between;
     max-width: 50%;
     margin: auto;
+}
 
-
+section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 
