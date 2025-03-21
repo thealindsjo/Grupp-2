@@ -1,5 +1,5 @@
 import { API_TOKEN } from './api_token.js';
-// import { displayMovies } from './display.js';
+ import { displayMovies } from './display.js';
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
@@ -17,6 +17,7 @@ if (document.body.id === 'movies') {
         const popularBtn = document.querySelector('#popular-button');
         const topRatedBtn = document.querySelector('#top-rated-button');
         const searchField = document.querySelector('#search-field');
+        const searchInput = document.querySelector('#search-input');
 
         const options = {
             method: 'GET',
@@ -33,6 +34,8 @@ if (document.body.id === 'movies') {
         topRatedBtn.addEventListener('click', async () => {
             const topRatedMovies = await fetchTopRatedMovies(options);
         });
+
+        
 
         // searchField.addEventListener('submit', async (event) => {
 
