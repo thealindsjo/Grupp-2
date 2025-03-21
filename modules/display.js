@@ -23,12 +23,12 @@ export function displayMovies(movies) {
     container.innerHTML = ""; // Rensa innehållet innan ny visning
     movies.forEach(movie => {
         const movieElement = document.createElement("div");
+        movieElement.classList.add('myContent');
   
         const img = document.createElement('img');
         img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
         img.alt = `${movie.title}`;
-        img.classList.add('myImages');
-        img.id = 'myImg';
+        img.classList.add('modalImages');
 
         const title = document.createElement('h3');
         title.textContent = movie.title;

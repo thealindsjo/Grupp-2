@@ -161,20 +161,20 @@ body {
   background-color: #f0f0f0;
 }
 
-/* ========== Bilder och modal ========== */
-#myImg {
+.myContent {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   padding: 1%;
   margin: 5%;
-  width: 400px;
-  max-width: 400px;
+  max-width: 200px;
 }
 
-#myImg:hover {
+.myContent:hover {
   opacity: 0.7;
 }
+
+/* ========== Bilder och modal ========== */
 
 .modal {
   display: none;
