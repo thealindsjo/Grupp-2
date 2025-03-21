@@ -1,26 +1,34 @@
-import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from "./api_calls_movies.js";
+import { initModal } from './modal.js';
 
-export function displayTvSeries(tvSeries) {
-    const container = document.querySelector("#tv-shows");
-    container.innerHTML = ""; // Rensa innehållet innan ny visning
+export function displayTvSeries(tvSeries, contentContainer) {
+    contentContainer.innerHTML = "";
+
     tvSeries.forEach(tvShow => {
         const tvShowElement = document.createElement("li");
-        tvShowElement.classList.add("tv-show");
-        tvShowElement.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w200${tvShow.poster_path}" alt="${tvShow.name}">
-            <h3>${tvShow.name}</h3>
-            <p>Rating: ${tvShow.vote_average}</p>
-        `;
-        container.appendChild(tvShowElement);
+        tvShowElement.classList.add('myContent');
+
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w200${tvShow.poster_path}`;
+        img.alt = `${tvShow.title}`;
+        img.classList.add('modalImages');
+
+        const title = document.createElement('h3');
+        title.textContent = tvShow.title;
+
+        const rating = document.createElement('p');
+        rating.textContent = tvShow.vote_average;
+
+        tvShowElement.append(img, title, rating);
+
+        contentContainer.appendChild(tvShowElement);
     });
-}
 
-export function displayMovies(movies) {
-    const popularButton = document.getElementById("popular-btn");
-    const topRatedButton = document.getElementById("top-rated-btn");
-    const container = document.querySelector(".contentContainer");
+    initModal();
+};
 
-    container.innerHTML = ""; // Rensa innehållet innan ny visning
+export function displayMovies(movies, contentContainer) {
+    contentContainer.innerHTML = "";
+    
     movies.forEach(movie => {
         const movieElement = document.createElement("div");
         movieElement.classList.add('myContent');
@@ -38,18 +46,8 @@ export function displayMovies(movies) {
 
         movieElement.append(img, title, rating);
         
-        container.appendChild(movieElement);
+        contentContainer.appendChild(movieElement);
     });
-    
-    const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
 
-    popularButton.addEventListener("click", async () => {
-        const popularMovies = await fetchPopularMovies(options);
-        displayMovies(popularMovies);
-    });
-    
-    topRatedButton.addEventListener("click", async () => {
-        const topRatedMovies = await fetchTopRatedMovies(options);
-        displayMovies(topRatedMovies);
-    });
+    initModal();
 };
