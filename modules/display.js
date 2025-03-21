@@ -40,17 +40,16 @@ export function displayMovies(movies) {
         
         container.appendChild(movieElement);
     });
+    
+    const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
+
     popularButton.addEventListener("click", async () => {
-        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
-        const movies = await fetchPopularMovies(options);
-        displayMovies(movies);
+        const popularMovies = await fetchPopularMovies(options);
+        displayMovies(popularMovies);
     });
     
-    // Hämta och visa topprankade filmer
     topRatedButton.addEventListener("click", async () => {
-        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
-        const movies = await fetchTopRatedMovies(options);
-        displayMovies(movies);
+        const topRatedMovies = await fetchTopRatedMovies(options);
+        displayMovies(topRatedMovies);
     });
 };
-
