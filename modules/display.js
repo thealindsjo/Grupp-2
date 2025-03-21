@@ -1,4 +1,5 @@
 import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from "./api_calls_movies.js";
+
 export function displayTvSeries(tvSeries) {
     const container = document.querySelector("#tv-shows");
     container.innerHTML = ""; // Rensa innehållet innan ny visning
@@ -15,20 +16,28 @@ export function displayTvSeries(tvSeries) {
 }
 
 export function displayMovies(movies) {
+    const popularButton = document.getElementById("popular-btn");
+    const topRatedButton = document.getElementById("top-rated-btn");
+    const container = document.querySelector(".row");
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const popularButton = document.getElementById("popular-button");
-    const topRatedButton = document.getElementById("top-rated-button");
-    const container = document.querySelector(".container");
     container.innerHTML = ""; // Rensa innehållet innan ny visning
     movies.forEach(movie => {
         const movieElement = document.createElement("div");
-        movieElement.classList.add("movie");
-        movieElement.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
-            <p>Rating: ${movie.vote_average}</p>
-        `;
+  
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+        img.alt = `${movie.title}`;
+        img.classList.add('myImages');
+        img.id = 'myImg';
+
+        const title = document.createElement('h3');
+        title.textContent = movie.title;
+
+        const rating = document.createElement('p');
+        rating.textContent = movie.vote_average;
+
+        movieElement.append(img, title, rating);
+        
         container.appendChild(movieElement);
     });
     popularButton.addEventListener("click", async () => {
@@ -43,5 +52,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         const movies = await fetchTopRatedMovies(options);
         displayMovies(movies);
     });
-})};
+};
 

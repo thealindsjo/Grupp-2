@@ -1,5 +1,8 @@
 import { API_TOKEN } from './api_token.js';
- import { displayMovies,displayTvSeries } from './display.js';
+import { displayMovies,displayTvSeries } from './display.js';
+import { initModal } from './modal.js';
+
+initModal();
 
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
@@ -14,8 +17,8 @@ if (document.body.id === 'movies') {
     import("./api_calls_movies.js").then(module => {
         const { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } = module;
 
-        const popularBtn = document.querySelector('#popular-button');
-        const topRatedBtn = document.querySelector('#top-rated-button');
+        const popularBtn = document.querySelector('#popular-btn');
+        const topRatedBtn = document.querySelector('#top-rated-btn');
         const searchField = document.querySelector('#search-field');
        
 
@@ -29,10 +32,14 @@ if (document.body.id === 'movies') {
 
         popularBtn.addEventListener('click', async () => {
             const popularMovies = await fetchPopularMovies(options);
+            displayMovies(popularMovies);
+            initModal();
         });
 
         topRatedBtn.addEventListener('click', async () => {
             const topRatedMovies = await fetchTopRatedMovies(options);
+            displayMovies(topRatedMovies);
+            initModal();
         });
 
         
