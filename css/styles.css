@@ -20,96 +20,7 @@ body {
   padding: 0 4px;
   justify-content: flex-start;
 }
-
-
-
-/* ========== Responsiva kolumner där movies/series ska appendas till ========== */
-#column1 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column2 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column3 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-#column4 {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-
-
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
  
-@media screen and (max-width: 870px) {
-  #column1 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column2 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column3 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-  #column4 {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #column1 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column2 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column3 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  #column4 {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
 .flex-gallery{
     display: flex;
     justify-content: space-between;
@@ -266,27 +177,4 @@ footer {
   justify-content: center;
   max-width: 70%;
   margin: auto;
-}
-
-.column {
-  flex: 1 1 100%;
-  padding: 4px;
-}
-
-.column img {
-  width: 100%;
-  margin-top: 8px;
-}
-
-/* ========== Media Queries för större skärmar ========== */
-@media screen and (min-width: 600px) {
-  .column {
-    flex: 1 1 50%;
-  }
-}
-
-@media screen and (min-width: 870px) {
-  .column {
-    flex: 1 1 25%;
-  }
 }

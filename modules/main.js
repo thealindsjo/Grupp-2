@@ -2,8 +2,6 @@ import { API_TOKEN } from './api_token.js';
 import { displayMovies,displayTvSeries } from './display.js';
 import { initModal } from './modal.js';
 
-initModal();
-
 const toggleMenu = document.querySelector(".toggleMenu");
 const menu = document.querySelector(".menu");
 
