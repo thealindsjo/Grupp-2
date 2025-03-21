@@ -30,11 +30,11 @@ main {
   justify-content: flex-start;
 }
 
-.flex-gallery{
-    display: flex;
-    justify-content: space-between;
-    max-width: 50%;
-    margin: auto;
+.flex-gallery {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  margin: auto;
 }
 
 section {
@@ -45,26 +45,25 @@ section {
   margin-bottom: 20px;
 }
 
-
 /* ========== Navigation ========== */
-.logo-container{
-display: flex;
-justify-content: space-between;
-flex-direction: row;
-max-width: 100%;
-width:100%;
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 100%;
+  width: 100%;
 }
-.container2{
+.container2 {
   display: flex;
   align-self: flex-start;
-  width:15%;
+  width: 15%;
   max-width: 15%;
 }
-.container2 a{
+.container2 a {
   text-decoration: none;
   color: black;
 }
-#logo-text{
+#logo-text {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -74,22 +73,22 @@ width:100%;
 }
 .nav_ {
   display: flex;
- 
   align-items: center;
   padding: 10px 20px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
   justify-content: space-between;
   flex-direction: row;
 }
 
 .toggleMenu {
-  display:flex;
+  display: flex;
   font-size: 30px;
   cursor: pointer;
 }
-.toggleDiv{
+
+.toggleDiv {
   display: flex;
   align-self: flex-end;
 }
