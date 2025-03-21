@@ -8,13 +8,11 @@ toggleMenu.addEventListener("click", () => {
     menu.classList.toggle("active");
 });
 
-const containerDiv = document.querySelector('.container');
-
 if (document.body.id === 'movies') {
     import("./api_calls_movies.js").then(module => {
         const { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } = module;
 
-        const contentContainer = document.querySelector('.contentContainer');
+        const contentContainer = document.querySelector('#contentContainer');
         const popularBtn = document.querySelector('#popular-btn');
         const topRatedBtn = document.querySelector('#top-rated-btn');
         const searchField = document.querySelector('#search-field');
@@ -36,6 +34,20 @@ if (document.body.id === 'movies') {
             const topRatedMovies = await fetchTopRatedMovies(options);
             displayMovies(topRatedMovies, contentContainer);
         });
+
+        const delay = 300;
+        let timer;
+
+        searchField.addEventListener('input', async (event) => {
+            const searchInput = event.target.value.trim();
+            
+            clearTimeout(timer);
+            timer = setTimeout(async () => {
+                
+            const searchedMovies = await fetchSearchMovies(options, searchInput)
+            displayMovies(searchedMovies, contentContainer);
+            }, delay);
+        })
 
     })
     .catch(error => console.error("Error loading module:", error));
