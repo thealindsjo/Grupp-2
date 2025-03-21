@@ -10,7 +10,7 @@ body {
   line-height: 1.6;
 }
 
-.row {
+.contentContainer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;

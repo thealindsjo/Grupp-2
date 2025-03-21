@@ -18,7 +18,7 @@ export function displayTvSeries(tvSeries) {
 export function displayMovies(movies) {
     const popularButton = document.getElementById("popular-btn");
     const topRatedButton = document.getElementById("top-rated-btn");
-    const container = document.querySelector(".row");
+    const container = document.querySelector(".contentContainer");
 
     container.innerHTML = ""; // Rensa innehållet innan ny visning
     movies.forEach(movie => {
