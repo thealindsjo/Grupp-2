@@ -5,7 +5,7 @@
   justify-content: space-between;
   flex-direction: row;
   justify-content: center;
-  height: 100vh;
+  height: calc(70vh + 1vw);
   max-height: 100vh;
   background-color: #f9f9f9;
   padding: 20px;
@@ -20,8 +20,10 @@
   align-self: flex-end;
   max-width: 100%;
   width: 100%;
-  padding-top: 10%;
   padding-bottom: 5%;
+}
+#home-title h1{
+    font-size: calc(1em + 1vw);
 }
 
 #home-buttons {
@@ -69,4 +71,5 @@
   max-width: 100%;
   flex-direction: column;
   justify-content: center;
+  height: 80%;
 }
