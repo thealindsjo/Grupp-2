@@ -11,6 +11,7 @@ export function displayTvSeries(tvSeries, contentContainer) {
         img.src = `https://image.tmdb.org/t/p/w200${tvShow.poster_path}`;
         img.alt = `${tvShow.title}`;
         img.classList.add('modalImages');
+        tvShowElement.style.width = "150px"; 
 
         const title = document.createElement('h3');
         title.textContent = tvShow.name;
@@ -37,6 +38,7 @@ export function displayMovies(movies, contentContainer) {
         img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
         img.alt = `${movie.title}`;
         img.classList.add('modalImages');
+        movieElement.style.width = "150px"; 
 
         const title = document.createElement('h3');
         title.textContent = movie.title;
