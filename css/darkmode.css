@@ -1,28 +1,27 @@
 body {
-  background-color: #fff;
-  color: #000;
-  transition: background 0.3s, color 0.3s;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #616060;
+    background-color: #ffffff;
+    color: #000000; 
+    transition: background 0.3s, color 0.3s;
   }
-
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #000000; 
+    color: #645353;
+  }
+  
   #dark-mode-toggle {
     position: fixed;
     bottom: 10px;
     right: 10px;
     padding: 10px 15px;
-    background-color: #333;
-    color: white;
+    background-color: #656565;
+    color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
     border-radius: 5px;
   }
-
+  
   #dark-mode-toggle:hover {
-    background-color: #555;
+    background-color: #000000;
   }
-}
