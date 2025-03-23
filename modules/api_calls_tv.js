@@ -51,11 +51,17 @@ export async function fetchPopularTvSeries() {
 
 }export async function fetchSearchTvSeries(options, query) {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}&language=en-US&page=1`, options);
+        const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}&language=en-US&page=1&include_adult=true`, options);
+
+        console.log(response);
+
         if (!response.ok) {
             throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
         const data = await response.json();
+
+        console.log(data);
+        
         return data.results;
     } catch (error) {
         console.error(error);
@@ -63,25 +69,4 @@ export async function fetchPopularTvSeries() {
 }
 
 
-
-export async function fetchSearchTvSeries(searchInput) {
-    try {
-        const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(searchInput)}&include_adult=true&language=en-US&page=1`, options);
-        
-        console.log(response);
-
-        if(!response.ok) {
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);        
-        }
-
-        const data = await response.json();
-
-        console.log(data);
-
-        return data.results;
-    }
-    catch (error) {
-        console.error(error);
-    } 
-}
 
