@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupp 2 Uppgift 1</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="./modules/main.js" type="module" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Series</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/darkmode.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" />
+
+  <script src="./modules/main.js" type="module" defer></script>
 </head>
+
 <body id="tvSeries">
   <main>
     <header>
-      <nav>
-        <div class="nav_">
+      <div class="nav_">
+        <div class="container2">
+          <div class="logo-container">
+            <div class="logo-img">
+              <a href="./index.html">
+                <img class="logo" src="./images/icons8-movie-64.png">
+            </div>
+            <div id="logo-text">
+              <h2>TMDB</h2>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <nav id="toggleDiv">
           <div class="toggleMenu">
             <i class="fas fa-bars"></i>
           </div>
@@ -27,37 +42,43 @@
             <div><a href="tvSeries.html">TV Series</a></div>
             <div><a href="aboutUs.html">About Us</a></div>
           </div>
-        </div>
+      </div>
       </nav>
     </header>
 
     <section class="top-section">
       <h1>TV Series</h1>
-          <form id="search-form">
-              <input type="text" id="search-input" placeholder="Search for a TV Series...">
-              <button type="submit">Search</button>
-          </form>
-          <button id="top-rated-btn">Top-Rated TV Series</button>
-          <button id="popular-btn">Popular TV Series</button>
+      <input type="text" id="search-field" placeholder="Search for a TV Series...">
+      <button id="top-rated-btn">Top-Rated TV Series</button>
+      <button id="popular-btn">Popular TV Series</button>
     </section>
 
-    <ul id="tv-shows"></ul>
+    <div class="container">
+      <container class="flex-gallery">
+
+        <div id="contentContainer">
+        </div>
+
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+
+      </container>
+    </div>
   </main>
   <footer>
     <div class="footer-container">
       <p>&copy; 2025 Grupp 2 - All Rights Reserved</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://twitter.com" target="_blank"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="https://instagram.com" target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
+  <button id="dark-mode-toggle">Dark Mode🌙 </button>
 </body>
+
 </html>

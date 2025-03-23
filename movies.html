@@ -4,132 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/darkmode.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" />
+
     <script src="./modules/main.js" type="module" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-    />
 </head>
 
 <body id="movies">
-    <header>
-        <nav>
-          <div class="nav_">
-            <div class="toggleMenu">
-              <i class="fas fa-bars"></i>
-            </div>
-            <div class="menu">
-              <div><a href="index.html">Home</a></div>
-              <div><a href="movies.html">Movies</a></div>
-              <div><a href="tvSeries.html">TV Series</a></div>
-              <div><a href="aboutUs.html">About Us</a></div>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <section class="top-section">
-        <h1>Movies</h1>
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search for a TV Series...">
-                <button type="submit">Search</button>
-            </form>
-            <button id="top-rated-btn">Top-Rated TV Series</button>
-            <button id="popular-btn">Popular TV Series</button>
-      </section>
-
-    <main class="container">
-
-        <container class="flex-gallery">
-
-            <div class="row">
-                <div id="column1">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                 <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+    <main>
+        <header>
+            <nav>
+                <div class="nav_">
+                    <div class="container2">
+                        <div class="logo-container">
+                            <div class="logo-img">
+                                <a href="./index.html">
+                                    <img class="logo" src="./images/icons8-movie-64.png">
+                            </div>
+                            <div id="logo-text">
+                                <h2>TMDB</h2>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="toggleMenu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="menu">
+                        <div><a href="index.html">Home</a></div>
+                        <div><a href="movies.html">Movies</a></div>
+                        <div><a href="tvSeries.html">TV Series</a></div>
+                        <div><a href="aboutUs.html">About Us</a></div>
+                    </div>
                 </div>
-                <div id="column2">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                    <img class="myImages" id="myImg" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
+            </nav>
+        </header>
+
+        <section class="top-section">
+            <h1>Movies</h1>
+            <input type="text" id="search-field" placeholder="Search for a TV Series...">
+            <button id="top-rated-btn">Top-Rated Movies</button>
+            <button id="popular-btn">Popular Movies</button>
+        </section>
+
+        <div class="container">
+            <container class="flex-gallery">
+
+                <div id="contentContainer">
                 </div>
-                <div id="column3">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-            </div>
-            <div id="column4">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" style="width: 150px;">
-            </div>
+
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+
+            </container>
         </div>
-
-
-
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-            </div>
-
-        </container>
-
+    </main>
     <footer>
         <div class="footer-container">
-          <p>&copy; 2025 Grupp 2 - All Rights Reserved</p>
-          <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://twitter.com" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://instagram.com" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
+            <p>&copy; 2025 Grupp 2 - All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      </footer>
-    
-    <script>
-        // create references to the modal...
-        var modal = document.getElementById('myModal');
-        // to all images -- note I'm using a class!
-        var images = document.getElementsByClassName('myImages');
-        // the image in the modal
-        var modalImg = document.getElementById("img01");
-        // and the caption in the modal
-        var captionText = document.getElementById("caption");
-
-        // Go through all of the images with our custom class
-        for (var i = 0; i < images.length; i++) {
-            var img = images[i];
-            // and attach our click listener for this image.
-            img.onclick = function (evt) {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-        }
-
-        var span = document.getElementsByClassName("close")[0];
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    </script>
-    
+    </footer>
 
 </body>
+<button id="dark-mode-toggle">Dark Mode🌙 </button>
 
 </html>

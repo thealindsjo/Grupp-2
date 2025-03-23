@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupp 2 Uppgift 1</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/darkmode.css" />
   <script src="./modules/main.js" type="module" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -13,49 +14,61 @@
 </head>
 
 <body id="index">
-  <header>
-    <nav>
-      <div class="nav_">
-        <div class="toggleMenu">
-          <i class="fas fa-bars"></i>
+  <main>
+    <header>
+      <nav>
+        <div class="nav_">
+          <div class="container2">
+            <div class="logo-container">
+              <div class="logo-img">
+                <a href="./index.html">
+                  <img class="logo" src="./images/icons8-movie-64.png">
+              </div>
+              <div id="logo-text">
+                <h2>TMDB</h2>
+              </div>
+              </a>
+            </div>
+          </div>
+          <div class="toggleMenu">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="menu">
+            <div><a href="index.html" class="box-shadow background-div">Home</a></div>
+            <div><a href="movies.html" class="box-shadow background-div">Movies</a></div>
+            <div><a href="tvSeries.html" class="box-shadow background-div">Tv Series</a></div>
+            <div><a href="aboutUs.html" class="here box-shadow background-div">About Us</a></div>
+          </div>
         </div>
-        <div class="menu">
-          <div><a href="index.html" class="box-shadow background-div">Home</a></div>
-          <div><a href="movies.html" class="box-shadow background-div">Movies</a></div>
-          <div><a href="tvSeries.html" class="box-shadow background-div">Tv Series</a></div>
-          <div><a href="aboutUs.html" class="here box-shadow background-div">About Us</a></div>
+      </nav>
+    </header>
+
+    <section>
+      <div id="home-container">
+        <div id="home-content">
+          <div Id="home-title">
+            <h1>Welcome to The Movie Database Homepage</h1>
+          </div>
+          <div id="home-buttons">
+            <a href="movies.html"><button>Movies</button></a>
+            <a href="tvSeries.html"><button>TV Series</button></a>
+            <a href="aboutUs.html"><button>About Us</button></a>
+          </div>
         </div>
       </div>
-    </nav>
-  </header>
-
-
-  <div id="home-container">
-    <div Id="home-title">
-    <h1>Welcome to The Movie Database Homepage</h1>
-    </div>
-    <div id="home-buttons">
-      <button class="home-button">Movies</button>
-      <button class="home-button">series</button>
-      <button class="home-button">About US</button>
-    </div>
-  </div>
+    </section>
+  </main>
   <footer>
     <div class="footer-container">
       <p>&copy; 2025 Grupp 2 - All Rights Reserved</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://twitter.com" target="_blank"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="https://instagram.com" target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
 </body>
+<button id="dark-mode-toggle">Dark Mode🌙 </button>
 
 </html>

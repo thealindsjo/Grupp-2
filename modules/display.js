@@ -1,47 +1,55 @@
-import { fetchPopularMovies, fetchTopRatedMovies, fetchSearchMovies } from "./api_calls_movies.js";
-export function displayTvSeries(tvSeries) {
-    const container = document.querySelector("#tv-shows");
-    container.innerHTML = ""; // Rensa innehållet innan ny visning
+import { initModal } from './modal.js';
+
+export function displayTvSeries(tvSeries, contentContainer) {
+    contentContainer.innerHTML = "";
+
     tvSeries.forEach(tvShow => {
-        const tvShowElement = document.createElement("li");
-        tvShowElement.classList.add("tv-show");
-        tvShowElement.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w200${tvShow.poster_path}" alt="${tvShow.name}">
-            <h3>${tvShow.name}</h3>
-            <p>Rating: ${tvShow.vote_average}</p>
-        `;
-        container.appendChild(tvShowElement);
+        const tvShowElement = document.createElement("div");
+        tvShowElement.classList.add('myContent');
+
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w200${tvShow.poster_path}`;
+        img.alt = `${tvShow.title}`;
+        img.classList.add('modalImages');
+        tvShowElement.style.width = "150px"; 
+
+        const title = document.createElement('h3');
+        title.textContent = tvShow.name;
+
+        const rating = document.createElement('p');
+        rating.textContent = tvShow.vote_average.toFixed(1);
+
+        tvShowElement.append(img, title, rating);
+
+        contentContainer.appendChild(tvShowElement);
     });
-}
 
-export function displayMovies(movies) {
+    initModal();
+};
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const popularButton = document.getElementById("popular-button");
-    const topRatedButton = document.getElementById("top-rated-button");
-    const container = document.querySelector(".container");
-    container.innerHTML = ""; // Rensa innehållet innan ny visning
+export function displayMovies(movies, contentContainer) {
+    contentContainer.innerHTML = "";
+    
     movies.forEach(movie => {
         const movieElement = document.createElement("div");
-        movieElement.classList.add("movie");
-        movieElement.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
-            <p>Rating: ${movie.vote_average}</p>
-        `;
-        container.appendChild(movieElement);
-    });
-    popularButton.addEventListener("click", async () => {
-        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
-        const movies = await fetchPopularMovies(options);
-        displayMovies(movies);
-    });
-    
-    // Hämta och visa topprankade filmer
-    topRatedButton.addEventListener("click", async () => {
-        const options = { headers: { Authorization: `Bearer ${API_TOKEN}` } };
-        const movies = await fetchTopRatedMovies(options);
-        displayMovies(movies);
-    });
-})};
+        movieElement.classList.add('myContent');
+  
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+        img.alt = `${movie.title}`;
+        img.classList.add('modalImages');
+        movieElement.style.width = "150px"; 
 
+        const title = document.createElement('h3');
+        title.textContent = movie.title;
+
+        const rating = document.createElement('p');
+        rating.textContent = movie.vote_average.toFixed(1);
+
+        movieElement.append(img, title, rating);
+        
+        contentContainer.appendChild(movieElement);
+    });
+
+    initModal();
+};
