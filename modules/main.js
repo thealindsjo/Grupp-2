@@ -49,6 +49,5 @@ if (document.body.id === 'tvSeries') {
     }).catch(error => console.error("Error loading TV module:", error));
 }
 
-    import('./tvSeries.js')
-        .catch(error => console.error("Error loading TV module:", error));
+   
 
